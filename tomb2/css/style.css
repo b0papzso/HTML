@@ -1,0 +1,38 @@
+body{
+    align-items: center;
+    background-color: blueviolet;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: flex;
+}
+
+#elements{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#adat{
+    margin-top: 20px;
+    width: 200px;
+    height: 100px;
+    background-color: cyan;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 10px;
+
+}
+
+.input-div{
+    margin-bottom: 100px;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    
+}
