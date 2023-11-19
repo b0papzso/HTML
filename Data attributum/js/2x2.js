@@ -1,22 +1,10 @@
+let colors = ["red", "blue", "yellow"]
 
-function changeColor()
-{
-    let color = 0; //sarga = 0 piros = 1 kek = 2
-    let index = document.getElementsByClassName("item").dataset.indexNumber;
-
-    if(color = 0)
-    {
-        index.style.backgroundColor = "red";
-        color += 1; 
-    }
-    if(color = 1)
-    {
-        index.style.backgroundColor =  "blue";
-        color += 1; 
-    }
-    if(color = 2)
-    {
-        index.style.backgroundColor = "yellow";
-        color = 0; 
+function changeColor(obj) {
+   
+   obj.style.backgroundColor = colors[obj.dataset.index];
+   obj.dataset.index = parseInt(obj.dataset.index)+1;
+    if (obj.dataset.index =="3") {
+        obj.dataset.index ="0";
     }
 }
