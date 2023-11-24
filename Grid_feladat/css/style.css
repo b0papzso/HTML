@@ -1,0 +1,142 @@
+.kettoxketto1, .kettoxketto2, .kettoxketto3, .kettoxketto4, .haromxnegy1, .haromxnegy2, .haromxnegy3, .haromxnegy4, .haromxnegy5, .haromxnegy6, .haromxnegy7, .haromxnegy8, .haromxnegy9, .haromxnegy10, .haromxnegy11, .haromxnegy12, .racs1, .racs2, .racs3, .racs4, .racs5, .racs6, .racs7, .racs8{
+    
+    background-color: blue;
+    width: 50px;
+    height: 50px;
+    max-width: 50px;
+    margin-bottom: 10px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: max-content;
+    column-gap: 15px;
+}
+
+.kettoxketto1
+{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.kettoxketto2
+{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.kettoxketto3
+{
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.kettoxketto4
+{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.haromxnegy1{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.haromxnegy2{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.haromxnegy3{
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.haromxnegy4{
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.haromxnegy5{
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.haromxnegy6{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.haromxnegy7{
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.haromxnegy8{
+    grid-column: 2;
+    grid-row: 4;
+}
+
+.haromxnegy9{
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.haromxnegy10{
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.haromxnegy11{
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.haromxnegy12{
+    grid-column: 3;
+    grid-row: 4;
+}
+
+.racs1{
+    grid-column: 1;
+    grid-row: 1;
+    justify-content: center;
+    margin-left: 35px;
+}
+
+.racs2{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.racs3{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.racs4{
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.racs5{
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.racs6{
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.racs7{
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.racs8{
+    grid-column: 4;
+    grid-row: 1;
+    margin-left: 35px;
+}
+
