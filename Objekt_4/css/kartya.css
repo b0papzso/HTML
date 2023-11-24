@@ -1,0 +1,12 @@
+#kartya{
+    display: flex;
+    width: 150px;
+    height: 75px;
+    background-color: aqua;
+    color: fuchsia;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
