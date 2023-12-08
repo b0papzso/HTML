@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Event</title>
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.btn {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+} </style>
+</head>
+
+<body>
+    <form action="" id="form"><input type="text" id="txt">
+        <button class="btn">Consolera kiírás</button></form>
+    
+
+<script>
+const button = document.querySelector(".btn")
+const text = document.querySelector("#txt")
+
+button.addEventListener("click", function() {
+console.log(text.value)
+})
+
+var form = document.getElementById("form");
+function handleForm(event) { event.preventDefault(); } 
+form.addEventListener('submit', handleForm);
+</script>
+
+</body>
+</html>
