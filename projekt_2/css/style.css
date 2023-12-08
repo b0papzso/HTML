@@ -8,6 +8,9 @@ body{
     justify-content: center;
     margin: auto;
     opacity: 0%;
+    background-color: aqua;
+    width: 800px;
+    height: 800px;
 }
 
 #startbtn{
@@ -26,10 +29,17 @@ body{
 
 .haromxnegy1, .haromxnegy2, .haromxnegy3, .haromxnegy4, .haromxnegy5, .haromxnegy6, .haromxnegy7, .haromxnegy8, .haromxnegy9, .haromxnegy10, .haromxnegy11, .haromxnegy12
 {
-background-color: blue;
+background-image: url(../image/UNION_PLAYING_CARDS2_JAY_FLETCHER.jpg);
+background-size: cover;
 width: 300px;
 height: 200px;
 margin-bottom: 10px;
+display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
 
 }
 
@@ -91,4 +101,8 @@ margin-bottom: 10px;
 .haromxnegy12{
     grid-column: 3;
     grid-row: 4;
+}
+
+.card.face-up {
+    color: black; /* Show the text when the card is face up */
 }
