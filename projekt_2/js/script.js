@@ -38,19 +38,25 @@ document.addEventListener('DOMContentLoaded', function () {
             locked = true;
             clickCounter = +1;
             if(clickCounter == 2)
-            // Check if the cards match
+            {
+                
+            }
             setTimeout(() => {
                 let [card1, card2] = flippedCards;
     
                 if (card1.dataset.card === card2.dataset.card) {
-                    // Cards match, keep them face up
                     card1.removeEventListener('click', flipCard);
                     card2.removeEventListener('click', flipCard);
                     card1.style.opacity = "0%";
                     card2.style.opacity = "0%";
                     points += 1;
+                    console.log(points)
+                    if(points == 6)
+        {
+            alert("Ön nyert!");
+            history.go(-1);
+        }
                 } else {
-                    // Cards do not match, flip them face down
                     card1.classList.remove('face-up');
                     card2.classList.remove('face-up');
                     card1.textContent = "";
@@ -62,10 +68,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 1000);
         }
 
-        if(points = 6)
-        {
-            alert("Ön nyert!");
-            location.reload;
-        }
+        
     }
 });

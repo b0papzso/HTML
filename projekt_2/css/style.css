@@ -4,12 +4,16 @@ body{
 
 #grid{
     display: grid;
-    column-gap: 100px;
+    /*column-gap: 100px;*/
     justify-content: center;
     margin: auto;
     opacity: 0%;
     width: 800px;
     height: 800px;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 200px 200px 200px 200px;
+    opacity: 0;
+    gap: 50px;
 }
 
 #startbtn{
@@ -29,6 +33,7 @@ body{
 .card
 {
     display: grid;
+    margin: 50px;
 background-image: url(../image/UNION_PLAYING_CARDS2_JAY_FLETCHER.jpg);
 background-size: cover;
 width: 300px;
