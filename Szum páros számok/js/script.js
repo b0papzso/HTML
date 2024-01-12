@@ -11,5 +11,11 @@ const ossze = () =>{
             szum += Math.pow(szamok[index], 3);
         }       
     }
+
+    if(szum == 0)
+    {
+        szum = "undefined";
+    }
+    
     document.getElementById("eredmeny").innerHTML = szum;
 }
