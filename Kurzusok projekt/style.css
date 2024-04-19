@@ -2,3 +2,38 @@ body{
 
     background: linear-gradient(to right, #D526FA, #DFABF7);
 }
+
+#deleteBtn{
+    background-image:url("3405244.png");
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+}
+
+#studentBtn{
+    margin-top: 5px;
+    background-image:url("arc.webp");
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+}
+
+input[type="text"]{
+    padding: 10px;
+    margin: 10px auto;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    background: lightgrey;
+    width: 274px;
+    color: black;
+  }
+
+  #addBtn
+  {
+    margin-top: 5px;
+    background-image:url("zoldgomb.png");
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+  }
