@@ -53,6 +53,7 @@ function addCourse(){
     .then(response => response.json())
      alert("Hozzáadott egy kurzust!")
      document.getElementById("bekeres").innerHTML = "";
+     allCourses();
     // Az eredmények megjelenítése a konzolon
 }
 
@@ -78,15 +79,11 @@ function courseNumberGet()
                 
             }
             li += `</tr>`
+            li += `<button onclick="showCourseAdd();" id="addCourseBtn"></button>`
                 }});
     document.getElementById("eredmeny").innerHTML = li;
     });
 }
-
-
-
-
-
 
 function deleteCourse()
 {
@@ -114,12 +111,12 @@ function showStudentOptions()
     .then(response => response.json())
     .then(json => {
     let li = `<tr><th>Diák</th><th>ID</th></tr>`;
-    json.forEach(students => {
-    for (let i = 0; i < students.students.length; i++) {
+    json.forEach(course => {
+    for (let i = 0; i < course.students.length; i++) {
     li += `<tr>`
-    li += `<td id="studentNameShow">${students.students[i].name}</td><td>${students.students[i].id}</td>`  
-    li += `<td><button onclick="modifyStudentShow(${students.id});" id="modifyBtn"></button></td></tr>`
-    li += `<td><button onclick="deleteStudent(${students.students[i].id});" id="deleteBtn"></button></td></tr>`;
+    li += `<td id="studentNameShow">${course.students[i].name}</td><td>${course.students[i].id}</td>`  
+    li += `<td><button onclick="modifyStudentShow(${course.id}, ${course.students[i].id});" id="modifyBtn"></button></td></tr>`
+    li += `<td><button onclick="deleteStudent(${course.students[i].id}, ${course.id});" id="deleteBtn"></button></td></tr>`;
     }});
     li += `<button onclick="showStudentAdd();" id="addStudentBtn"></button>`
     document.getElementById("eredmeny").innerHTML = li;
@@ -147,28 +144,31 @@ function studentNumberGet()
     });
 }
 
-function modifyStudentShow(id) {
+function modifyStudentShow(id, studentId) {
     fetch(urlStudent)
     .then(response => response.json())
     .then(json => {
     document.getElementById("eredmeny").innerHTML = "";
     document.getElementById("bekeres").innerHTML = `<input type="text" name="studentName" id="studentNameModified" placeholder="Diák neve">
-    <button onclick="modifyStudent(${id});" id="modifyStudentBtn"></button>`
-    console.log(json.id)
+    <button onclick="modifyStudent(${id}, ${studentId});" id="modifyStudentBtn"></button>`
 })
     
 }
 
-function modifyStudent(id)
+function modifyStudent(id, studentId)
 {
     showStudentOptions()
     console.log(id)
-    fetch(`https://vvri.pythonanywhere.com/api/students/${id}`, {
+    console.log(studentId)
+    var newName = document.getElementById("studentNameModified").value
+    document.getElementById("bekeres").innerHTML = ""
+    fetch(`https://vvri.pythonanywhere.com/api/students/` + studentId, {
     method: "PUT",
     body: JSON.stringify({
-        name: document.getElementById("studentNameModified").value,
+        name: newName,
         course_id: id
     }),
+    
     headers: {
         "Content-type": "application/json; charset=UTF-8"
     }
