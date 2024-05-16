@@ -3,38 +3,47 @@ const urlStudent = "https://vvri.pythonanywhere.com/api/students";
 
 
 
-function allCourses() {
-    document.getElementById("eredmeny").innerHTML = "";
-    fetch(url)
-    .then(response => response.json())
-    .then(json => {
-    let li = `<tr><th>ID</th><th>Kurzus</th><th>Diákok</th></tr>`;
-    json.forEach(course => {
-    li += `<tr>
-    
-    <td>${course.id} </td>
-    <td>${course.name}</td>`;
-    for (let i = 0; i < course.students.length; i++) {
-        li += `<td>${course.students[i].name}</td>`
+async function allCourses() {
+    try{
+        document.getElementById("eredmeny").innerHTML = "";
+        const response = await fetch(url);
+        const data = await response.json();
+        let li = `<tr><th>ID</th><th>Kurzus</th></tr>`;
+        if(data){
+        data.forEach(course =>
+        li += `<tr>
+        <td>${course.id} </td>
+        <td>${course.name}</td>`);
+        li += `<td><button onclick="deleteCourse();" id="deleteBtn"></button></td></tr>`;
         
-    }
-    li += `<td><button onclick="deleteCourse();" id="deleteBtn"></button></td></tr>`;
-    });
+};
     li += `<button onclick="showCourseAdd();" id="addCourseBtn"></button>`
     document.getElementById("eredmeny").innerHTML = li;
-    });
-}
+    }
+catch(error)
+{console.error("Hiba történt: ", error)};
+    }
+    
 
-function showCourseAdd()
+async function showCourseAdd()
 {
+    try{
     document.getElementById("eredmeny").innerHTML = "";
     document.getElementById("bekeres").innerHTML = ` <input type="text" name="courseName" id="courseName" placeholder="Kurzus neve">
     <button onclick="addCourse();" id="addStudentBtn"></button>`
-    
+    }
+    catch(error)
+{console.error("Hiba történt: ", error)};
 }
 
-function addCourse(){
-    fetch(url, {
+async function addCourse(){
+    if (document.getElementById("courseName").value.trim() === "")
+    {
+        alert("Nem adott meg semmit kurzusnévnek!")
+        return
+    }
+    try{
+        const response = await fetch(url, {
      
         method: "POST",
          
@@ -56,18 +65,23 @@ function addCourse(){
      allCourses();
     // Az eredmények megjelenítése a konzolon
 }
+catch(error)
+{console.error("Hiba történt: ", error)};
+}
 
 
-function courseNumberGet()
+async function courseNumberGet()
 {
     document.getElementById("eredmeny").innerHTML = "";
+    try{
     var courseNumber = parseInt(document.getElementById("courseNumber").value);
-    fetch(url)
-    .then(response => response.json())
-    .then(json => {
+    const response = await fetch(url)
+    const data = await response.json()
     let li = `<tr><th>Kurzus</th><th>ID</th><th>Diákok</th></tr>`;
     let index = 0;
-    json.forEach(course => {
+    if(data)
+    {
+    data.forEach(course => {
         index++;
             if(index == courseNumber)
             {li += `<tr>
@@ -78,11 +92,14 @@ function courseNumberGet()
                 li += `<td>${course.students[i].name}</td>`
                 
             }
-            li += `</tr>`
+            li += `<td><button onclick="deleteCourse();" id="deleteBtn"></button></td></tr>`;
             li += `<button onclick="showCourseAdd();" id="addCourseBtn"></button>`
-                }});
+
+                }})};
     document.getElementById("eredmeny").innerHTML = li;
-    });
+    }
+    catch(error)
+{console.error("Hiba történt: ", error)};
 }
 
 function deleteCourse()
@@ -157,10 +174,15 @@ function modifyStudentShow(id, studentId) {
 
 function modifyStudent(id, studentId)
 {
-    showStudentOptions()
+    if (document.getElementById("studentNameModifed").value.trim() === "")
+    {
+        alert("Nem adott meg semmit diáknévnek!")
+        return
+    }
     console.log(id)
     console.log(studentId)
     var newName = document.getElementById("studentNameModified").value
+    console.log(newName)
     document.getElementById("bekeres").innerHTML = ""
     fetch(`https://vvri.pythonanywhere.com/api/students/` + studentId, {
     method: "PUT",
@@ -172,7 +194,10 @@ function modifyStudent(id, studentId)
     headers: {
         "Content-type": "application/json; charset=UTF-8"
     }
-})}
+    
+}
+)
+showStudentOptions()}
 
 function deleteStudent(id)
 {
@@ -196,6 +221,11 @@ function showStudentAdd()
 }
 
 function addStudent(){
+    if (document.getElementById("studentName").value.trim() === "")
+    {
+        alert("Nem adott meg semmit diáknévnek!")
+        return
+    }
     fetch(urlStudent, {
      
         // Metódus hozzáadása
@@ -219,4 +249,3 @@ function addStudent(){
      document.getElementById("bekeres").innerHTML = "";
      showStudentOptions()
 }
-
