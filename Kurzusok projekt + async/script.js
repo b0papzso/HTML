@@ -105,6 +105,7 @@ async function courseNumberGet()
 
 async function deleteCourse()
 {
+    try{
     const response = await fetch(url, {
     method: "DELETE",
     headers: {
@@ -118,7 +119,9 @@ async function deleteCourse()
     throw new Error('Network response was not ok.');
 }
 alert("Kitörölte a kurzust!")
-
+    }
+    catch(error)
+    {console.error("Hiba történt: ", error)};
 }
 
 async function showStudentOptions()
@@ -166,6 +169,7 @@ async function studentNumberGet()
 }
 
 async function modifyStudentShow(id, studentId) {
+    try{
     const response = await fetch(urlStudent)
     const data = await response.json()
     if(data)
@@ -175,8 +179,10 @@ async function modifyStudentShow(id, studentId) {
     document.getElementById("bekeres").innerHTML = `<input type="text" name="studentName" id="studentNameModified" placeholder="Diák neve">
     <button onclick="modifyStudent(${id}, ${studentId});" id="modifyStudentBtn"></button>`
     }
-    
 }
+}
+catch(error)
+{console.error("Hiba történt: ", error)};
 }
 async function modifyStudent(id, studentId)
 {
@@ -203,20 +209,25 @@ async function modifyStudent(id, studentId)
 showStudentOptions()}
 catch(error){console.error("Hiba történt: ", error)}
 }
-function deleteStudent(id)
+async function deleteStudent(id)
 {
-    fetch(`https://vvri.pythonanywhere.com/api/students/${id}`, {
+    try{
+    const response = await fetch(`https://vvri.pythonanywhere.com/api/students/${id}`, {
     method: "DELETE",
     headers: {
         "Content-type": "application/json; charset=UTF-8"
     }
-})
-alert("Kitörölte a diákot!")
-showStudentOptions()
+    })
+    alert("Kitörölte a diákot!")
+    showStudentOptions()
+}
+    catch(error)
+    {console.error("Hiba történt: ", error)};
 }
 
+
 function showStudentAdd()
-{
+{   
     document.getElementById("eredmeny").innerHTML = "";
     document.getElementById("bekeres").innerHTML = ` <input type="text" name="studentName" id="studentName" placeholder="Diák neve">
     <input type="text" name="courseId" id="courseId" placeholder="Kurzus ID-je">
