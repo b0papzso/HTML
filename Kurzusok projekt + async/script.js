@@ -26,15 +26,11 @@ catch(error)
     }
     
 
-async function showCourseAdd()
+function showCourseAdd()
 {
-    try{
     document.getElementById("eredmeny").innerHTML = "";
     document.getElementById("bekeres").innerHTML = ` <input type="text" name="courseName" id="courseName" placeholder="Kurzus neve">
     <button onclick="addCourse();" id="addStudentBtn"></button>`
-    }
-    catch(error)
-{console.error("Hiba történt: ", error)};
 }
 
 async function addCourse(){
