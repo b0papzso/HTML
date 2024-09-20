@@ -6,13 +6,16 @@
     <title>CodeWars Felhasználói adatok</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
 </head>
 <body>
+    <center>
     <h3>Adjon meg egy tetszőleges(létező) CodeWars felhasználonevet</h3>
-    <input type="text" name="fhnev" id="fhnev"><br>
+    <input type="text" name="fhnev" id="fhnev" placeholder="Felhasználónév"><br>
     <button onclick="getCodeWarsID()">Kimutatás</button>
     <div id="eredmeny"></div>
-    <div id="nyelvek"></div>
-
+    <table id="nyelvek"></table>
+</center>
 </body>
 </html>

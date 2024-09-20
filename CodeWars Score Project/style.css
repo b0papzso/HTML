@@ -1,4 +1,54 @@
 body
 {
-    background-;
+    background-image:linear-gradient(#BF0FFF, #C35FC2);
+    height: 97.2vh;
+    color: white;
+    justify-content: center;
+;
+}
+
+#nemLetezik{
+    display: none;
+}
+
+table, th, td, tr
+{
+    justify-content: center;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    padding: 5px;
+    background-color: #C587A4;
+    width: max-content;
+}
+
+table{
+    border: black 2px solid;
+}
+
+td{
+    border-right: black 2px solid;
+}
+
+input
+{
+    height: 30px;
+    width: 300px;
+    border-radius: 10px;
+}
+button
+{
+    height: 30px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: #C9D767;
+}
+
+button:hover, button:active
+{
+    height: 30px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: #CBFF49;
 }
