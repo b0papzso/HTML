@@ -4,7 +4,8 @@ body
     height: 97.2vh;
     color: white;
     justify-content: center;
-;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #nemLetezik{
