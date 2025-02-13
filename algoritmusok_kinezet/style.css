@@ -1,0 +1,40 @@
+h2{
+    color: grey;
+    font-family: "Roboto", serif;
+    margin-bottom: 50px;
+}
+
+.informacio{
+    height: 50vh;
+    width: 80vw;
+    margin-bottom: 5vh;
+}
+
+*{
+    font-family: "Roboto", serif;
+}
+
+.topbar{
+    height: 25%;
+    background-color: lightblue;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 0px;
+}
+
+.bottomtext{
+    height: 70%;
+    align-items: center;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.bg-warning{
+    height: 25%;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.bottomtextIdo{
+    height: 70%;
+    padding-top: 10px;
+}
