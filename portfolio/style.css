@@ -1,0 +1,38 @@
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/800') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.project-card {
+    transition: transform 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.skill-item {
+    background: #f8f9fa;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.contact-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.searchimg{
+    width: 66px;
+    height: 68px;
+}
